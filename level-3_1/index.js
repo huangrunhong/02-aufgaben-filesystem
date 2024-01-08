@@ -13,7 +13,7 @@ const workFile = (file) => {
   if (fs.existsSync(file)) {
     console.log("Datei ist schon da");
   } else {
-    fs.writeFile(`./myFolder/${file}`, "", (err) => {
+    fs.writeFile(`./myFolder/${file}`, file + "\n", (err) => {
       if (err) {
         return console.log(`datei ${file} ist nicht angelegt`);
       }
@@ -24,6 +24,4 @@ const workFile = (file) => {
 
 workFile("myFile.txt");
 
-fs.writeFile("./myFolder/myFile.txt", "Hallo Welt!", (err) =>
-  err ? console.error(err) : console.log("Fertig")
-);
+workFile("HelloBackend");

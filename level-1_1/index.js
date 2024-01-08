@@ -15,7 +15,7 @@ fs.access("./assets", dir, (err) => {
   } else {
     fs.rm(dir, { recursive: true, force: true }, (err) => {
       if (err) {
-        throw err;
+        return console.log("err");
       }
     });
   }
